@@ -53,6 +53,7 @@ version = "0.1.0"
 dependencies = [
  "shadowsocks-crypto 0.2.5",
  "shadowsocks-crypto 0.3.1",
+ "shadowsocks-crypto 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -313,6 +314,21 @@ checksum = "5f4d6e8659da6954c274331d8dfad6a6bd2af302d6131856b0af465d4db59234"
 dependencies = [
  "crypto2",
  "rand",
+]
+
+[[package]]
+name = "shadowsocks-crypto"
+version = "0.3.1"
+dependencies = [
+ "aes",
+ "aes-gcm",
+ "cfg-if",
+ "chacha20",
+ "chacha20poly1305",
+ "hkdf",
+ "md-5",
+ "rand",
+ "sha1",
 ]
 
 [[package]]

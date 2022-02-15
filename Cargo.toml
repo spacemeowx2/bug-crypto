@@ -15,3 +15,9 @@ features = ["v1-stream"]
 version = "0.2"
 package = "shadowsocks-crypto"
 features = ["v1-stream"]
+
+[dependencies.fix-crypto]
+version = "0.3"
+package = "shadowsocks-crypto"
+features = ["v1-stream"]
+path = "./shadowsocks-crypto/"
