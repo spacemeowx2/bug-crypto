@@ -24,18 +24,19 @@ fn main() {
 
     let mut helloworld = old_enc();
     let mut cipher =
-        new_crypto::v1::Cipher::new(new_crypto::v1::CipherKind::SS_RC4_MD5, KEY, EMPTY);
-
-    assert!(cipher.decrypt_packet(&mut helloworld));
-    // assert failed here
-    // assert_eq!(helloworld, MSG);
-
-    let mut helloworld = old_enc();
-    let mut cipher =
         fix_crypto::v1::Cipher::new(fix_crypto::v1::CipherKind::SS_RC4_MD5, KEY, EMPTY_IV);
 
     assert!(cipher.decrypt_packet(&mut helloworld));
     assert_eq!(helloworld, MSG);
 
     println!("{:?}", helloworld);
+
+    let mut helloworld = old_enc();
+    // NOTE that the IV len is zero, so it's impossible to decrypt
+    let mut cipher =
+        new_crypto::v1::Cipher::new(new_crypto::v1::CipherKind::SS_RC4_MD5, KEY, EMPTY);
+
+    assert!(cipher.decrypt_packet(&mut helloworld));
+    // assert failed here
+    assert_eq!(helloworld, MSG);
 }
